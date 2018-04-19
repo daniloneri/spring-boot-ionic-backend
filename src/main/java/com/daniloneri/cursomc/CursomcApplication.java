@@ -36,28 +36,20 @@ public class CursomcApplication implements CommandLineRunner {
 
 	@Autowired
 	private CategoriaRepository categoriaRepository;
-
 	@Autowired
 	private ProdutoRepository produtoRepository;
-
 	@Autowired
 	private EstadoRepository estadoRepository;
-
 	@Autowired
 	private CidadeRepository cidadeRepository;
-
 	@Autowired
 	private ClienteRepository clienteRepository;
-
 	@Autowired
 	private EnderecoRepository enderecoRepository;
-
 	@Autowired
 	private PedidoRepository pedidoRepository;
-
 	@Autowired
 	private PagamentoRepository pagamentoRepository;
-
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
 
@@ -66,7 +58,7 @@ public class CursomcApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... arg0) throws Exception {
+	public void run(String... args) throws Exception {
 
 		Categoria cat1 = new Categoria(null, "Informática");
 		Categoria cat2 = new Categoria(null, "Escritório");
@@ -114,7 +106,7 @@ public class CursomcApplication implements CommandLineRunner {
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
 
-		Cidade c1 = new Cidade(null, "Uberlandia", est1);
+		Cidade c1 = new Cidade(null, "Uberlândia", est1);
 		Cidade c2 = new Cidade(null, "São Paulo", est2);
 		Cidade c3 = new Cidade(null, "Campinas", est2);
 
@@ -151,7 +143,6 @@ public class CursomcApplication implements CommandLineRunner {
 		cli1.getPedidos().addAll(Arrays.asList(ped1, ped2));
 
 		pedidoRepository.save(Arrays.asList(ped1, ped2));
-
 		pagamentoRepository.save(Arrays.asList(pagto1, pagto2));
 
 		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
